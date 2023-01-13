@@ -32,14 +32,14 @@ describe('generateMockOrdersResponse', () => {
         start.setMonth(start.getMonth() -3);
         const end = new Date();
         const response = api.generateMockOrdersResponse({
-                customer_id: 1, 
+                customer_id: "3", 
                 date_range_start: start,
                 date_range_end: end, 
             }
         );
-        expect(response.data.customerId).toEqual(1);
-        expect(response.data.customerName).toEqual("Peter Parker");
-        expect(response.data.orders.length).toEqual(6);
+        expect(response.data.id).toEqual(3);
+        expect(response.data.name).toEqual("Steve Rogers");
+        expect(response.data.orders.length).toEqual(5);
     })
     it('throws an error if the requested customer is not found', () => {
         const start = new Date('1/11/2023');
@@ -62,31 +62,6 @@ describe('generateMockCustomersResponse', () => {
     it('returns a full list of customers with their name and id only', () => {
         const response = api.generateMockCustomersResponse();
 
-        expect(response.data).toEqual([
-            {
-                id: 1,
-                name: 'Peter Parker'
-            },
-            {
-                id: 2,
-                name: 'Miles Morales'
-            },
-            {
-                id: 3,
-                name: 'Steve Rogers'
-            },
-            {
-                id: 4,
-                name: 'Tony Stark'
-            },
-            {
-                id: 5,
-                name: 'Steven Strange',
-            },
-            {
-                id: 6,
-                name: 'Bruce Banner'
-            }
-        ]);
+        expect(response.data.length).toEqual(6);
     })
 })

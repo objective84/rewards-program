@@ -1,24 +1,14 @@
-import logo from './logo.svg';
+import { Rewards } from './components/Rewards';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div style={{background: 'blue'}}>
+        <h1 style={{color: 'white', textAlign: 'center'}}>Avengers Store Reward Points</h1>
+      </div>
+        <Rewards/>
+    </>
   );
 }
 
