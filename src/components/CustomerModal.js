@@ -24,7 +24,7 @@ const styles = {
 const CustomerModal = (props) => {
     const {customer, showModal, handleCloseModal} = props;
 
-    //I would notmally use something like moment.js here, but this will do.
+    //I would normally use something like moment.js here, but this will do.
     const formatDate = (date) => {
         var year = date.getFullYear();
         
